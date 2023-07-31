@@ -1,0 +1,250 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding:0;
+}
+
+body{
+    width: 100%;
+    height:100vh;
+    margin: 0;
+    padding: 0;
+    background: #333;
+    font-family: 'Poppins',sans-serif;
+
+}
+html{
+    font-size: 62.5%;
+}
+a{
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header{
+
+    width: 100%;
+    height: 100px;
+    margin-bottom: 30px;
+    border-bottom: 1px dashed #f1f1f1;
+    text-align: center;
+    padding: 5px 0;
+}
+
+h1{
+    color:#f1f1f1;
+    font-size: 3rem;
+    margin: 20px auto;
+}
+.grid{
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-auto-rows: 400px;
+    grid-template-columns: repeat(auto-fit, 450px);
+    justify-content: center;
+}
+.drawingBox{
+    background: #7592c7;
+    margin: 15px;
+    box-shadow:0 0 15px #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+
+/* case 1 Animation text clignotant */
+
+.box1 ul li{
+    display:inline-block;
+    margin: 5px;
+    list-style-type: none;
+    font-size: 5vh;
+    font-weight: bold;
+    color:#2e3131;
+    box-shadow: none ;
+    animation: flash 1.4s linear infinite;
+}
+
+@keyframes flash {
+    0% {color:#2e3131; text-shadow: none }
+    90% {color:#2e3131; text-shadow: none }
+    100%{color:#eeee00; text-shadow: 0 0 7px #eeee00, 0 0 5px 20px #f39c12 }
+}
+
+.box1 ul li:nth-child(1){
+    animation-delay: 0.1s;
+}
+.box1 ul li:nth-child(2){
+    animation-delay: 0.2s;
+}
+.box1 ul li:nth-child(3){
+    animation-delay: 0.3s;
+}
+.box1 ul li:nth-child(4){
+    animation-delay: 0.4s;
+}
+.box1 ul li:nth-child(5){
+    animation-delay: 0.5s;
+}
+.box1 ul li:nth-child(6){
+    animation-delay: 0.6s;
+}
+.box1 ul li:nth-child(7){
+    animation-delay: 0.7s;
+}
+.box1 ul li:nth-child(8){
+    animation-delay: 0.8s;
+}
+.box1 ul li:nth-child(9){
+    animation-delay: 0.9s;
+}
+
+/* case 2 carré pivotant */
+.loading{
+    width: 100px;
+    height: 100px;
+    background: white;
+    border-radius: 12px;
+    animation: loading 2s linear infinite;
+}
+
+@keyframes loading{
+    0% {transform: rotateX(0deg) rotateY(0deg);}
+    50% {transform: rotateX(0deg) rotateY(180deg);}
+    100% {transform: rotateX(180deg) rotateY(180deg);}
+}
+
+/* case 3 loader barres  */
+
+.boxLoader{
+    width:70%;
+    height: 70%;
+    background-color: #eee;
+    border: 10px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.BarreLoader {
+    width: 10px;
+    height:60px;
+    background-color: #333;
+    margin: 5px;
+    animation: allonge 1.2s ease-in-out infinite;
+}
+
+@keyframes allonge {
+    0%   {transform: scaleY(0.4)}
+    20%  {transform: scaleY(1)}
+    40%  {transform: scaleY(0.4)}
+    100% {transform: scaleY(0.4)}
+}
+
+.barre2{
+    animation-delay: -1.1s;
+}
+.barre3{
+    animation-delay: -1s;
+}
+.barre4{
+    animation-delay: -0.9s;
+}
+.barre5{
+    animation-delay: -0.8s;
+}
+
+/* Loader dot */
+
+.box4 {
+    padding-top: 50px;
+}
+
+.loader-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .dot {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #111;
+    margin: 0 15px;
+    animation: loader infinite 0.3s alternate;
+  }
+  .d2 {
+    animation-delay: 0.05s;
+  }
+  .d3 {
+    animation-delay: 0.1s;
+  }
+  @keyframes loader {
+    to {
+      transform: translateY(-30px);
+    }
+  }
+
+  /* loader morceaux de cercle */
+
+  .loader-circle {
+    display: block;
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 7px solid transparent;
+    border-top-color: crimson;
+    animation: spin 2s linear infinite;
+}
+
+.loader-circle::after, .loader-circle::before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    border: 7px solid transparent;
+    
+}
+
+
+.loader-circle::before {
+    top: 10px;
+    left: 10px;
+    bottom: 10px;
+    right: 10px;
+    border-top-color: rgb(252, 45, 86);
+    animation: spin 3s linear infinite;
+}
+.loader-circle::after {
+    top: 25px;
+    left: 25px;
+    bottom: 25px;
+    right: 25px;
+    border-top-color: rgb(192, 108, 125);
+    animation: spin 1.5s linear infinite;
+}
+
+  @keyframes spin {
+    from{
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+  
